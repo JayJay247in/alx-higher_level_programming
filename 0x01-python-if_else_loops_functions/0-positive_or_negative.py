@@ -1,13 +1,14 @@
 #!/usr/bin/python3
 import random
+number = random.randint(-10, 10)
 
-# Generate a random signed number
-number = random.randint(-100, 100)
+print(number, end=" ") 
 
-# Check if the number is positive, negative, or zero
 if number > 0:
-    print(f"The number {number} is positive")
+  print("is positive")
 elif number == 0:
-    print(f"The number {number} is zero")
-else:
-    print(f"The number {number} is negative")
+  print("is zero")  
+elif number < 0:
+  print("is negative")
+
+print()
