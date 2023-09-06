@@ -1,33 +1,25 @@
-#ifndef SORTED_LINKED_LIST_H
-#define SORTED_LINKED_LIST_H
+#ifndef LISTS_H
+#define LISTS_H
 
-// Define the structure for a singly linked list node
-struct listint_t {
-    int data;
-    struct listint_t* next;
-};
-
-// Define a type alias for convenience
-typedef struct listint_t listint_t;
-
+#include <stdlib.h>
 /**
- * Inserts a number into a sorted singly linked list.
- * @param head The pointer to the head of the list.
- * @param number The number to be inserted.
- * @return The address of the new node, or NULL if it fails.
+ * struct listint_s - singly linked list
+ * @n: integer
+ * @next: points to the next node
+ *
+ * Description: singly linked list node structure
+ * for Holberton project
  */
-listint_t* insert_node(listint_t** head, int number);
+typedef struct listint_s
+{
+    int n;
+    struct listint_s *next;
+} listint_t;
 
-/**
- * Prints the elements of the linked list.
- * @param head The pointer to the head of the list.
- */
-void print_list(listint_t* head);
+size_t print_listint(const listint_t *h);
+listint_t *add_nodeint_end(listint_t **head, const int n);
+void free_listint(listint_t *head);
 
-/**
- * Frees the memory allocated for the linked list.
- * @param head The pointer to the head of the list.
- */
-void free_list(listint_t* head);
+listint_t *insert_node(listint_t **head, int number);
 
-#endif /* SORTED_LINKED_LIST_H */
+#endif /* LISTS_H */

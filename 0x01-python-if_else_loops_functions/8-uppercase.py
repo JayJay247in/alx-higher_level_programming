@@ -1,17 +1,13 @@
 #!/usr/bin/python3
-def uppercase(s):
-    result = ""
-    
-    for char in s:
-        if 'a' <= char <= 'z':
-            # Convert lowercase letter to uppercase using ASCII values
-            result += chr(ord(char) - ord('a') + ord('A'))
-        else:
-            # Keep non-lowercase letters unchanged
-            result += char
-    
-    # Print the result in uppercase followed by a new line
-    print(result)
+def to_uper(character):
+    if ord(character) >= 97 and ord(character) <= 122:
+        return (ord(character) - 32)
+    else:
+        return ord(character)
 
-# Test the function
-uppercase("Hello, World!")  # Output: "HELLO, WORLD!"
+
+def uppercase(string):
+    string_new = ""
+    for character in string:
+        string_new += "%c" % to_uper(character)
+    print("{:s}".format(string_new))
